@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/logincss.css">
+    <title>Login</title>
+</head>
+<body>
+    <!-- <py-script src="./reminder.py"></py-script>
+    <center><h2>Login Page</h1></center>
+    
+    <div class="container">
+        <div class="screen">
+            <div class="screen__content">
+                <form class="login">
+                    <div class="login__field">
+                        <i class="login__icon fas fa-user"></i>
+                        <input type="text" class="login__input" placeholder="User name / Email">
+                    </div>
+                    <div class="login__field">
+                        <i class="login__icon fas fa-lock"></i>
+                        <input type="password" class="login__input" placeholder="Password">
+                    </div>
+                    <button class="button login__submit">
+                        <span class="button__text"><a href="{{url_for('healthquiz')}}">Log In</a> </span>
+                        <i class="button__icon fas fa-chevron-right"></i>
+                    </button>				
+                </form>
+                <div class="social-login">
+                    <a href="{{url_for('register')}}">Don't have an account? Sign Up</a><br>
+                </div>
+            </div>
+            <div class="screen__background">
+                <span class="screen__background__shape screen__background__shape4"></span>
+                <span class="screen__background__shape screen__background__shape3"></span>		
+                <span class="screen__background__shape screen__background__shape2"></span>
+                <span class="screen__background__shape screen__background__shape1"></span>
+            </div>		
+        </div>
+    </div> -->
+
+
+
+
+
+    <h1>Health APP</h1>
+    <div class="container" id="container">
+        <!-- <div class="form-container sign-up-container">
+            <form action="#">
+                <h1>Create Account</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email for registration</span>
+                <input type="text" placeholder="UserName" />
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <button>Sign Up</button>
+            </form>
+        </div> -->
+        
+      
+            <form method="post">
+                <h2>Sign in</h2>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your account</span>
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <a href="#">Forgot your password?</a>
+                <button> <span class="button__text"><a href="{{ url_for('loginauth') }}">Log In</a> </span></button>
+                <h4>Hello, Friend!</h4>
+                    <p>Enter your personal details and start journey with us by Signing UP</p>
+                    
+                    <button class="ghost" id="signUp" >
+                        <span class="button__text"><a href="{{ url_for('addUser') }}">Sign UP</a> </span>
+                        </button>
+                </form>
+            
+       
+        <!-- <div class="overlay-container">
+            <div class="overlay">
+                 <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">
+                        <span class="button__text"><a href="{{url_for('home')}}">Log In</a> </span>
+                       </button>
+                </div> --> -->
+                <!-- <form method="post"> -->
+                <!-- <div class="overlay-panel overlay-right"> -->
+                    
+                <!-- </div>
+                </form>
+            </div> -->
+        <!-- </div> --> -->
+ 
+    </div>
+    
+    <footer>
+        <p>
+            <i class="fa fa-heart"></i> 
+            <!-- <a target="_blank" href="https://florin-pop.com">Florin Pop</a> -->
+            Welcome to Health APP!!
+            <!-- <a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>. -->
+        </p>
+    </footer>
+</body>
+</html>

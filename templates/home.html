@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/homestyle.css">
+    <title>Home</title>
+    <style>
+        body {
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .topnav {
+          overflow: hidden;
+          background-color: #333;
+        }
+        
+        .topnav a {
+          float: left;
+          display: block;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+        }
+        
+        .topnav a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+        
+        .topnav a.active {
+          background-color: #04AA6D;
+          color: white;
+        }
+        
+        .topnav .icon {
+          display: none;
+        }
+        
+        @media screen and (max-width: 600px) {
+          .topnav a:not(:first-child) {display: none;}
+          .topnav a.icon {
+            float: right;
+            display: block;
+          }
+        }
+        
+        @media screen and (max-width: 600px) {
+          .topnav.responsive {position: relative;}
+          .topnav.responsive .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+          }
+          .topnav.responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+          }
+        }
+        </style>
+</head>
+<body>
+ 
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">Home</a> 
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="{{url_for('login')}}">Login page</a>
+        <a href="{{url_for('register')}}">Register page</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      
+      
+      <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+      </script>
+    <!-- <h1 style="left: padding 150px; color: #04AA6D;">
+      It’s that time of year again for planning your next health fair. <br>But how are you going to make your booth stand out and drive more traffic?<br><br> Well- we have some ideas for you!
+    --> <div class="container">
+        <div class="card">
+            <figure class="card__thumb">
+                <img src="https://cdn-icons-png.flaticon.com/512/4826/4826278.png" class="card__image" height="400" width="370" style="margin-top: 40px;">
+                <figcaption class="card__caption">
+                    <h2 class="card__title">Schedule Your Tasks</h2>
+                    <p class="card__snippet"> A schedule establishes a predictable routine that reduces stress and improves efficiency. It makes decision-making easier, eliminates uncertainties, and builds healthy habits to manage your time and energy better. It can be a part of productivity planning and goal management.</p>
+                    <a href="{{url_for('addTasks')}}" class="card__button">Read more</a>
+                </figcaption>
+            </figure>
+        </div>
+    
+        <div class="card">
+            <figure class="card__thumb">
+                <img src="https://images.squarespace-cdn.com/content/v1/55422388e4b08b5a0e277299/1502559872552-VWUNGXR9BC3YFGUGO1F3/image-asset.jpeg?format=1500w" class="card__image"height="400" width="370" style="margin-top: 40px;">
+                <figcaption class="card__caption">
+                    <h2 class="card__title">Your Physical Health</h2>
+                    <p class="card__snippet">A fit body, a calm mind, a house full of love. These things cannot be bought – they must be earned.</p>
+                    <a href="{{url_for('videoshow')}}" class="card__button">Read more</a>
+                </figcaption>
+            </figure>
+        </div>
+    
+        <div class="card">
+            <figure class="card__thumb">
+                <img src="https://www.shutterstock.com/image-vector/mental-health-care-psychological-therapy-260nw-1821005846.jpg" class="card__image" height="400" width="370" style="margin-top: 40px;">
+                <figcaption class="card__caption">
+                    <h2 class="card__title">Your Mental Health</h2>
+                    <p class="card__snippet">You don’t have to control your thoughts. You just have to stop letting them control you</p>
+                    <a href="{{url_for('mentalhealthhome')}}" class="card__button">Read more</a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+    <footer>
+      <p>
+          <i class="fa fa-heart"></i> 
+          <!-- <a target="_blank" href="https://florin-pop.com">Florin Pop</a> -->
+          It’s that time of year again for planning your next health fair. <br>But how are you going to make your booth stand out and drive more traffic?<br><br> Well- we have some ideas for you!
+    
+          <!-- <a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>. -->
+      </p>
+  </footer>
+    <!-- <py-script src=”reminder.py”></py-script> -->
+</body>
+</html>

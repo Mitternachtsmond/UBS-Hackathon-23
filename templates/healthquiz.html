@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+
+<title>Health Quiz</title>
+
+<link rel="stylesheet" href="https://openworkout.cloud/static/normalise.css">
+<link rel="stylesheet" href="https://openworkout.cloud/css/site.css">
+
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta name="description" content="Allows the user to generate workout plans">
+<meta name="keywords" content="automated workout plan generation">
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+
+<link rel="shortcut icon" href="https://openworkout.cloud/media/favicon.ico" >
+
+</head>
+
+<body>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" integrity="sha256-wiYwAtNSF3nuWFREDO5vx5cwSmngwE1pGg59NQURCUY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.css" integrity="sha256-zDI1g6Yzr25YWykCOmTUeageF3RWaLnx+Ik8NqVk1xA=" crossorigin="anonymous" />
+
+<script type="text/javascript" src="https://openworkout.cloud/js/all.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha256-KM512VNnjElC30ehFwehXjx1YCHPiQkOPmqnrWtpccM=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.js" integrity="sha256-FaYRflg3IJpVUN+JgijEHFUYgsn1wS1xRlcKTIgToIo=" crossorigin="anonymous"></script>
+
+<section class="nav">
+<nav>
+	<!-- <ul>
+		<li><a href="https://openworkout.cloud/my_activities/">My Activities</a></li>
+		<li><a href="https://openworkout.cloud/all_activities/">All Activities</a></li>
+		<li><a href="https://openworkout.cloud/workouts/">Workouts</a></li>
+		<li><a href="https://openworkout.cloud/pace_plans/">Pace Plans</a></li>
+		<li><a href="https://openworkout.cloud/statistics/">Statistics</a></li>
+		<li><a href="https://openworkout.cloud/gear/">Gear</a></li>
+		<li><a href="https://openworkout.cloud/device_list/">Devices</a></li>
+		<li><a href="https://openworkout.cloud/friends/">Friends</a></li>
+		<li><a href="https://openworkout.cloud/import_activity/">Import</a></li>
+		<li><a href="https://openworkout.cloud/profile/">Profile</a></li>
+		<li><a href="https://openworkout.cloud/settings/">Settings</a></li>
+		<li><a href="https://openworkout.cloud/logout/">Log Out</a></li>
+	</ul> -->
+
+</section>
+
+
+<form action = "{{ url_for('addrec') }}" method = "POST">
+<section class="block">
+    <div>
+
+        <!-- <h2>Race Calendar</h2>
+        <p>
+            <table id="Races">
+            </table>
+
+            <div id="new_race" style="display: none;">
+                <h2>Add a Race</h2>
+                <p>Name<br><input type="text" name="race_name" id="race_name"><br></p>
+                <p>Date<br><input type="text" name="race_date" id="race_date"><br></p>
+                <p>Distance<br>
+                    <select name="race_distance" id="race_distance" class="right">
+                        <option value="5K Run">5K Run</option>
+                        <option value="10K Run">10K Run</option>
+                        <option value="15K Run">15K Run</option>
+                        <option value="Half Marathon">Half Marathon</option>
+                        <option value="Marathon">Marathon</option>
+                        <option value="50K Run">50K Run</option>
+                        <option value="50 Mile Run">50 Mile Run</option>
+                        <option value="Sprint Triathlon">Sprint Triathlon</option>
+                        <option value="Olympic Triathlon">Olympic Triathlon</option>
+                        <option value="Half Iron Distance Triathlon">Half Iron Distance Triathlon</option>
+                        <option value="Iron Distance Triathlon">Iron Distance Triathlon</option>
+                    </select><br>
+                </p>
+                <p>Importance<br>
+                    <select name="race_importance" id="race_importance" class="right">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                    </select><br>
+                </p>
+                <button type="modern_button" onclick="create_race()">Save</button>
+                <button type="button" onclick="cancel_create_race()">Cancel</button>
+                <hr>
+            </div>
+
+            <button type="button" onclick="add_race()">Add Race</button>
+        </p> -->
+
+        <hr>
+
+        <h2>Health Quiz </h2>
+        <p>
+            Enter Your Email<br>
+            <input type="Text" name="email" id="email"><br>
+            <br>
+        </p>
+        <p>
+            What is your Age?<br>
+            <input type="number" name="age"><br>
+            <br>
+        </p>
+        <p>
+            What is your Weight?<br>
+            <input type="number" name="weight" id="weight"><br>
+            <br>
+        </p>
+        <p>
+            What is your height? <br>
+            <input type="number" name="height" id="height"><br>
+            <br>
+        </p>
+        <p>
+            Enter Your Gender?<br>
+            <select name="gender" id="gender" class="right" >
+                <option value="F">Female</option>
+                <option value="M">Male</option>
+                <option value="O">Other</option>
+            </select><br>
+        </p>
+        <p>
+            How many avg hours do you really work?<br>
+            <br>
+            <input type="number" name="workhr"><br>
+            <br>
+        </p>
+        <p>
+            Do you take any mdecation pills?<br>
+            <select name="pills_status" id="pills_status" class="right">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br>
+        </p>
+        <p>
+            which pills do you take ?( if not enter N/A)<br>
+            <<br>
+            <input type="text" name="pills_name" id="pills_name"><br>
+            <br>
+        </p>
+        <p>
+            At what time do you take pills?<br>
+            <<br>
+            <input  name="pills_time" id="pills_time" type="time" value="00:00"><br>
+            <br>
+        </p>
+        <p>
+            Approx how much water do you drink daily?(in litre):
+             <br><input type="range" min="1" max="10" value="5" class="slider"  name="water" id="water" style="height:10px"><br>
+            <br>
+        </p>
+        <!-- <p>
+            Approx how much water do you drink daily?(in litre)<br>
+            <<br>
+            <input type="number" name="water" id="water"><br>
+            <br>
+        </p> -->
+        <p>
+            Do you usually exercise ?<br>
+            <select name="exercise" id="exercise" class="right">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br>
+        </p>
+        <p>
+            When do you exercise?(if no then skip Q)<br>
+            <br>
+            <input type="time" name="exercisetime"><br>
+            <br>
+        </p>
+        <p>
+            Do you usually take some time for hobbies?<br>
+            <select name="hobby_status" id="hobby_status" class="right">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br>
+        </p>
+
+        <p>
+            Breakfast Time :<br>
+            <br>
+            <input type="time" name="breakfasttime"><br>
+            <br>
+        </p>
+
+        <p>
+            Lunch Time :<br>
+            <br>
+            <input type="time" name="lunchtime"><br>
+            <br>
+        </p>
+
+        <p>
+            Dinner Time :<br>
+            <br>
+            <input type="time" name="dinnertime"><br>
+            <br>
+        </p>
+
+        <p>
+            How many hours do you sleep ?<br>
+            <br>
+            <input type="time" name="sleephr"><br>
+            <br>
+        </p>
+
+        <p>
+            sleeping time?<br>
+            <br>
+            <input type="time" name="sleeptime"><br>
+            <br>
+        </p>
+
+
+        <!-- <p>
+            Experience Level: <br><input type="range" min="1" max="10" value="5" class="slider" id="exp_level" name="exp_level"  style="height:10px"><br>
+        </p> -->
+
+        <!-- <p>
+            Comfort Level With Structured Training: <br><input type="range" min="1"max="10" value="5" class="slider" id="structured_training_comfort_level" name="structured_training_comfort_level" style="height:10px" ><br>
+        </p> -->
+        <!-- <button type="button" onclick="generate_workout_plan()">Regenerate the Workout Plan</button> -->
+        <input type = "submit" value = "submit" /><br>
+        <hr>
+
+        <!-- <h2>Training Paces For Running</h2>
+        <p>
+            Run workouts will reference these paces, calculated from the last four weeks of activity.
+        </p>
+        <p>
+            <table id="RunPaces">
+            </table>
+        </p>
+
+        <hr>
+
+        <h2>Calendar</h2>
+        <p>
+            Planned workouts will be added to the <a href="https://openworkout.cloud/my_activities"><b>My Activities</b></a> calendar, along with races from the race calendar.
+        </p>
+        <p id="calendar_url">
+        </p>
+
+        <hr>
+
+        <h2>Four Week Bests</h2>
+        <p>
+            Workouts are calculated using paces computed from the last four weeks of activity.
+        </p>
+        <p> -->
+            <!-- <h3>Cycling</h3>
+            <table id="Cycling">
+            </table>
+
+            <h3>Running</h3>
+            <table id="Running">
+            </table>
+        </p>
+        <button type="button" onclick="refresh_personal_records()">Refresh Personal Records</button> -->
+    </div>
+</section>
+</form>
+</body>
+
+</html>

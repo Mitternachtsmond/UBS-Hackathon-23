@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,
+                        initial-scale=1.0">
+    <title>Goal Setter</title>
+    <link rel="stylesheet"
+        href="/static/addTaskStyle.css">
+</head>
+
+
+
+    
+    
+    
+    
+
+
+    <div>
+        <header>
+            <h1 class="m_heading">Set your goals towards Well Being</h1>
+            <h3 class="m_title">Add and View your Goals</h3>
+        </header>
+        
+    <form method="POST" target="_blank" action="{{url_for('addgoal')}}">
+        <div class="m_container">
+            <div class="m_slider"></div>
+            <div class="m_btn">
+                <button class="m_login">Add Goals Here</button>
+                
+            </div>
+            <div class="m_form-section">
+                <div class="m_login-box">
+    
+                    <input type="text" height="50" class="m_email" name="email" placeholder="Enter Email">
+    
+                        <input type="text" style="height:50px" class="m_email" name="title" placeholder="Title of Goal Reminder"> 
+    
+                        <input type="time" class="m_email" name="remindtime" placeholder="Enter Reminder time">
+    
+                        
+    
+                        <select name="day" id="m_day" class="m_email" value="Weekday" height="50">
+                            <option value="everyday">everyday</option>
+                            <option value="Sunday">Sunday</option>
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                            <option value="Wednesday">Wednesday</option>
+                            <option value="Thursday">Thursday</option>
+                            <option value="Friday">Friday</option>
+                            <option value="Saturday">Saturday</option>
+                        </select><br>
+                         <input type="submit" value="submit"><br>    
+            </div>
+        </div>
+        <!-- <div class="m_btn">
+            <button class="m_login">Add Goals</button>
+            
+        </div> -->
+        </div></form>
+    </div>
+    
+    </body></html>
